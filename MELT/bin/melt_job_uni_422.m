@@ -1,4 +1,0 @@
-entwghtstart = 0.000426;
-m_input;
-melt;
-save('melt_output_uni_422.mat', 'tau', 'FC');
