@@ -1,6 +1,5 @@
-"""
+""" """
 
-"""
 import numpy as np
 from scipy.optimize import root, curve_fit
 import matplotlib.pyplot as plt
@@ -12,8 +11,10 @@ def fvd_to_tau(fvd):
     PALS lifetime (given in NANOSECONDS) using the Tau-Eldrup model
     """
     fvd = np.array(fvd)
-    x = fvd/2
-    tau = (2*(1-x/(x+1.66)+1/(2*np.pi)*np.sin(2*np.pi*x/(x+1.66))))**(-1)
+    x = fvd / 2
+    tau = (
+        2 * (1 - x / (x + 1.66) + 1 / (2 * np.pi) * np.sin(2 * np.pi * x / (x + 1.66)))
+    ) ** (-1)
 
     return tau
 
@@ -26,10 +27,12 @@ def tau_to_fvd(tau):
     fvd = np.zeros(len(tau))
 
     def te(x, tau):
-        return 1/tau-2*(1-x/(x+1.66)+1/(2*np.pi)*np.sin(2*np.pi*x/(x+1.66)))
+        return 1 / tau - 2 * (
+            1 - x / (x + 1.66) + 1 / (2 * np.pi) * np.sin(2 * np.pi * x / (x + 1.66))
+        )
 
     for i, tau_val in enumerate(tau):
         result = root(te, tau_val, args=(tau_val))
         fvd[i] = result.x[0]
 
-    return fvd *2 
+    return fvd * 2
