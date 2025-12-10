@@ -1,0 +1,22 @@
+=========================DATA FITTING========================
+For the double log-normal distribution:
+c_1=93.222, mu_1=7.688, sigma_1=0.592, c_2=912.439, mu_2=8.821, sigma_2=0.173
+AUC_1=138.270, AUC_2=394.879, AUC_total=533.150
+AUC_1/(AUC_total)=0.259, AUC_2/(AUC_1_total)=0.741
+
+For the single log-normal distribution:
+c_1=350.000, mu_1=8.400, sigma_1=0.608
+AUC_1=533.150
+AUC_1/(AUC_total)=1.000
+
+Data to supply for the spectra
+For the double log-normal distribution:
+tau_mean_sim = [4.787 5.940 7.688 8.821]
+tau_stddev_sim = [0.1 0.1 0.592 0.173]
+Int_mean_sim = [0.5 0.1 0.104 0.296]
+
+For the single log-normal distribution:
+tau_mean_sim = [4.787 5.940 8.400]
+tau_stddev_sim = [0.1 0.1 0.608]
+Int_mean_sim = [0.5 0.1 0.400]
+=========================END DATA FITTING========================
